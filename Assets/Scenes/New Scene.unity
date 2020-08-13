@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 51b74d7bad397457d883c5940f7664d8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1623,13 +1623,23 @@ PrefabInstance:
     - target: {fileID: 3340378101078080033, guid: a65a10546e141a245860c239c6f89151,
         type: 3}
       propertyPath: m_ClearFlags
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3340378101270038801, guid: a65a10546e141a245860c239c6f89151,
         type: 3}
       propertyPath: CenterOfGravity
       value: 
       objectReference: {fileID: 1917587058}
+    - target: {fileID: 3340378101270038801, guid: a65a10546e141a245860c239c6f89151,
+        type: 3}
+      propertyPath: MaxSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340378101270038801, guid: a65a10546e141a245860c239c6f89151,
+        type: 3}
+      propertyPath: PlayerSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3340378101270038802, guid: a65a10546e141a245860c239c6f89151,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1689,6 +1699,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340378101270038814, guid: a65a10546e141a245860c239c6f89151,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7783813424544337531, guid: 64c5893fa610c6049ba407fcfac73589,
+        type: 3}
+    - target: {fileID: 3340378101270038814, guid: a65a10546e141a245860c239c6f89151,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340378101270038814, guid: a65a10546e141a245860c239c6f89151,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.05000488
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340378101270038814, guid: a65a10546e141a245860c239c6f89151,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3340378101270038815, guid: a65a10546e141a245860c239c6f89151,
         type: 3}
