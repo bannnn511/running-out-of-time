@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - RoundPlatform
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Base
+    uniqueID: 3899373635
+    locked: 0
+  - name: Background
+    uniqueID: 1900622281
     locked: 0
