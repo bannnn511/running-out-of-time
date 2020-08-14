@@ -23,11 +23,11 @@ public class Player_Movement : MonoBehaviour{
 	private float distToGround;
 	private Collider2D collider;
 	public LayerMask GroundedMask;
-	
-	private Rigidbody2D RB2B;
-	
-
-	private SpriteRenderer PlayerSpriteRenderer;
+    public LayerMask whatIsGround;
+    private Rigidbody2D RB2B;
+    public float checkRadius;
+    public Transform feetPos;
+    private SpriteRenderer PlayerSpriteRenderer;
 	private Animator anim;
 	private float AngularSpeedLimitation;
 
@@ -141,7 +141,7 @@ public class Player_Movement : MonoBehaviour{
 
 
 	private bool isGrounded(){
-		if(Physics2D.Raycast(transform.position, -transform.up, 1F, GroundedMask, -Mathf.Infinity, Mathf.Infinity)){
+		if(Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround)){
 			return true;
 		}
 		return false;
