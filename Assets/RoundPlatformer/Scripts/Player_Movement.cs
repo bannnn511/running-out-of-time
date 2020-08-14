@@ -156,15 +156,17 @@ public class Player_Movement : MonoBehaviour{
 		Vector2 localVelocity = transform.InverseTransformDirection(RB2B.velocity);
 
 		if(localVelocity.x > 0.5F){
-			if(PlayerSpriteRenderer.flipX == true){
-				PlayerSpriteRenderer.flipX = false;
-			}
-		}
-		else if (localVelocity.x < -0.5){
 			if(PlayerSpriteRenderer.flipX == false){
 				PlayerSpriteRenderer.flipX = true;
 			}
 		}
+		
+		else if (localVelocity.x < -0.5){
+			if(PlayerSpriteRenderer.flipX == true){
+				PlayerSpriteRenderer.flipX = false;
+			}
+		}
+		
 	}
 	
 
