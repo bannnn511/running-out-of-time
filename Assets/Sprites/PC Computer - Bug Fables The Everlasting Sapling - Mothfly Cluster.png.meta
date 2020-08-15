@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: 1cbbf7e860cad5e40b7fb8cdc38d59b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6438135079296240859
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_0
+  - first:
+      213: 6719508278143825360
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_1
+  - first:
+      213: -5302273354654484129
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_2
+  - first:
+      213: 3296252672318199679
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_3
+  - first:
+      213: 1755684929059074248
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_4
+  - first:
+      213: 6553324059913927207
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_5
+  - first:
+      213: -5620778627985269430
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_6
+  - first:
+      213: -6515502934302487514
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_7
+  - first:
+      213: -3452408470059019560
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_8
+  - first:
+      213: -6470807501272939844
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_9
+  - first:
+      213: 1339461054381602435
+    second: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_10
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 705
+        width: 276
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc0f617eb9d85950800000000000000
+      internalID: 6438135079296240859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 708
+        width: 281
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d53f007d2d704d50800000000000000
+      internalID: 6719508278143825360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_2
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 710
+        width: 276
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59fcc10a7a8a66b0800000000000000
+      internalID: -5302273354654484129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_3
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 710
+        width: 276
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7755775754aebd20800000000000000
+      internalID: 3296252672318199679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 377
+        width: 276
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0b21614227d5810800000000000000
+      internalID: 1755684929059074248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 380
+        width: 281
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ab031f28512fa50800000000000000
+      internalID: 6553324059913927207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_6
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 379
+        width: 276
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d94d53e9bfef1b0800000000000000
+      internalID: -5620778627985269430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_7
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 378
+        width: 276
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c82e31a984495a0800000000000000
+      internalID: -6515502934302487514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_8
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 26
+        width: 279
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d21592c9c49610d0800000000000000
+      internalID: -3452408470059019560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_9
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 23
+        width: 278
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb281b48cd21336a0800000000000000
+      internalID: -6470807501272939844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Bug Fables The Everlasting Sapling - Mothfly Cluster_10
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 45
+        width: 239
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386b2e07bb8b69210800000000000000
+      internalID: 1339461054381602435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 136c5d6270ed15642934e8cf2950a580
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
