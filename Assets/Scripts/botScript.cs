@@ -6,6 +6,7 @@ using Pathfinding;
 public class botScript : MonoBehaviour
 {
 	public int maxHealth = 120;
+	public float chaseDistance = 4.5f;
 	Animator enemyAnimator;
 	int currentHealth;
 	Rigidbody2D enemyRigidBody;
@@ -33,14 +34,12 @@ public class botScript : MonoBehaviour
 			transform.eulerAngles = new Vector3(0, 0, 0);
 		}
 
-		if (aiPath.remainingDistance <= 4)
+		if (aiPath.remainingDistance <= chaseDistance)
 		{
-			Debug.Log("aaaaaaaaaaaaa");
 			enemyRigidBody.simulated = true;
 		}
 		else
 		{
-			Debug.Log("bbbbbbbbbbb");
 			enemyRigidBody.simulated = false;
 		}
 	}
