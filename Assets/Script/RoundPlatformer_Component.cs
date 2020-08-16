@@ -119,7 +119,7 @@ public class RoundPlatformer_Component : MonoBehaviour {
 		float Y;
 		float angle = (-(InputAngle / 2)) + Rotation;
 
-		for (int i = 0; i < (Segments + 1); i++){
+		for (int i = 0; i < (Segments +1); i++){
 			X = Mathf.Sin (Mathf.Deg2Rad * angle) * Position;
 			Y = Mathf.Cos (Mathf.Deg2Rad * angle) * Position;
 

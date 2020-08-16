@@ -102,7 +102,7 @@ public class Player_Movement : MonoBehaviour{
 			localvelocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * PlayerSpeed * 100 * CalculateAngularSpeedLimitation();
 			RB2B.velocity = transform.TransformDirection(localvelocity);
 
-			anim.SetBool("PlayerMoving", true);
+			//anim.SetBool("PlayerMoving", true);
 		}
 		else { //Slow down the player when no pressure on the Horizontal Axis (For more responcive controls).
 			
@@ -111,7 +111,7 @@ public class Player_Movement : MonoBehaviour{
 			localvelocity.x = localvelocity.x * 0.5F;
 			RB2B.velocity = transform.TransformDirection(localvelocity);
 
-			anim.SetBool("PlayerMoving", false);
+			//anim.SetBool("PlayerMoving", false);
 		}
 	}
 
