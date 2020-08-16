@@ -2,126 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-public class enemyAI : MonoBehaviour
+
+public class EnemyController : MonoBehaviour
 {
-	public GameObject CenterOfGravity;
-	public float GravityForce;
-	public Transform target;
-	public float speed = 200f;
-	public float nextWaypointDistance = 3f;
-
-	Path path;
-	int currentWaypoint = 0;
-	bool reachEndOfPath = false;
-
-	Seeker seeker;
-	Rigidbody2D rb;
-	SpriteRenderer spriteRenderer;
-
+	public int maxHealth = 120;
+	Animator enemyAnimator;
+	int currentHealth;
+	Rigidbody2D enemyRigidBody;
 	// Start is called before the first frame update
+	public AIPath aiPath;
 	void Start()
 	{
-		seeker = GetComponent<Seeker>();
-		rb = GetComponent<Rigidbody2D>();
-		spriteRenderer = GetComponent<SpriteRenderer>();
-
-		// InvokeRepeating("UpdatePath", 0f, .5f);
-
-	}
-
-	void UpdatePath()
-	{
-		if (seeker.IsDone())
-		{
-			seeker.StartPath(rb.position, target.position, OnPathComplete);
-		}
+		enemyAnimator = GetComponent<Animator>();
+		currentHealth = maxHealth;
+		enemyRigidBody = GetComponent<Rigidbody2D>();
+		aiPath = GetComponent<AIPath>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		checkEndOfPath();
-		MirrorEneny();
-		UpdatePath();
-		GravityDrag();
-	}
-
-	private void FixedUpdate()
-	{
-		enenyMovement();
-	}
-
-	void OnPathComplete(Path p)
-	{
-		if (!p.error)
+		if (aiPath.desiredVelocity.x <= 0.01f)
 		{
-			path = p;
-			currentWaypoint = 0;
-		}
-	}
-
-	void checkEndOfPath()
-	{
-		if (path == null)
-		{
-			return;
-		}
-		if (currentWaypoint >= path.vectorPath.Count)
-		{
-			reachEndOfPath = true;
-			return;
+			transform.eulerAngles = new Vector3(0, 0, 0);
+			enemyAnimator.SetBool("IsWalking", true);
 		}
 		else
 		{
-			reachEndOfPath = false;
-
+			transform.eulerAngles = new Vector3(0, 180, 0);
+			enemyAnimator.SetBool("IsWalking", true);
 		}
+
+		if (aiPath.remainingDistance <= 4)
+		{
+			EnemyAttack();
+		}
+
 	}
 
-	void enenyMovement()
+	public void TakeDamage(int damage)
 	{
-		Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-		Vector2 force = direction * speed * Time.deltaTime;
-
-		float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-		rb.AddForce(force);
-		if (distance < nextWaypointDistance)
+		if (damage > 0)
 		{
-			currentWaypoint++;
+			enemyAnimator.SetTrigger("IsHurt");
 		}
-
+		currentHealth -= damage;
+		if (currentHealth <= 0)
+		{
+			Die();
+		}
 	}
 
-	void MirrorEneny()
+	void Die()
 	{
-		Vector2 localVelocity = transform.InverseTransformDirection(rb.velocity);
-
-		if (localVelocity.x > 0.5F)
-		{
-			if (spriteRenderer.flipX == false)
-			{
-				spriteRenderer.flipX = true;
-			}
-		}
-
-		else if (localVelocity.x < -0.5)
-		{
-			if (spriteRenderer.flipX == true)
-			{
-				spriteRenderer.flipX = false;
-			}
-		}
+		enemyAnimator.SetBool("IsDeath", true);
+		enemyAnimator.SetBool("IsWalking", false);
+		GetComponent<Rigidbody2D>().simulated = false;
+		this.transform.position = new Vector2(enemyRigidBody.position.x, -5.7f);
 	}
 
-	private void GravityDrag()
+	void EnemyAttack()
 	{
-		if (CenterOfGravity != null)
-		{
-			rb.AddForce((CenterOfGravity.transform.position - transform.position) * GravityForce);
-			Vector3 dif = CenterOfGravity.transform.position - transform.position;
-			float RotationZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler(0.0F, 0.0F, RotationZ + 90);
-		}
+		enemyAnimator.SetTrigger("Attack");
 	}
-
 }
