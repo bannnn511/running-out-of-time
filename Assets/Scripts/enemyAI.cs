@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
 		currentHealth = maxHealth;
 		enemyRigidBody = GetComponent<Rigidbody2D>();
 		aiPath = GetComponent<AIPath>();
+		InvokeRepeating("LaunchProjectile", 2.0f, 0.3f);
 	}
 
 	// Update is called once per frame
