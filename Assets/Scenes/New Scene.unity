@@ -1784,16 +1784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f75eef761680490fb90d0075690f57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CenterOfGravity: {fileID: 1917587058}
-  GravityForce: 1
-  target: {fileID: 1656348228}
-  speed: 1000
-  nextWaypointDistance: 5
-  currentWaypoint: 0
-  reachEndOfPath: 0
-  seeker: {fileID: 0}
-  rb: {fileID: 0}
-  spriteRenderer: {fileID: 0}
 --- !u!1 &501641587
 GameObject:
   m_ObjectHideFlags: 0
@@ -10632,7 +10622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 120
-  aiPath: {fileID: 3748375402429663775}
 --- !u!114 &3748375402429663761
 MonoBehaviour:
   m_ObjectHideFlags: 0
