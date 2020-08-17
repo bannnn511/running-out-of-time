@@ -5,13 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Player_Movement : MonoBehaviour{
+public class Player_Movement : MonoBehaviour
+{
 
 
 	[Tooltip("This is the gameobject were the player is attracted to. If nothing, the player will fly, you can change that gameobject on Runtime")]
 	public GameObject CenterOfGravity;
 	public float GravityForce;
-	
+
 	public float PlayerSpeed;
 	public float MaxSpeed;
 	public float JumpSpeed;
@@ -21,21 +22,20 @@ public class Player_Movement : MonoBehaviour{
 	private int JumpCount;
 	private bool IsGrounded;
 	private float distToGround;
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     private Collider2D collider;
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
-    public LayerMask GroundedMask;
-	
+	public LayerMask GroundedMask;
+	public LayerMask whatIsGround;
 	private Rigidbody2D RB2B;
-	
-
+	public float checkRadius;
+	public Transform feetPos;
 	private SpriteRenderer PlayerSpriteRenderer;
 	private Animator anim;
 	private float AngularSpeedLimitation;
 
 
 
-	void Start() {
+	void Start()
+	{
 		RB2B = GetComponent<Rigidbody2D>();
 		PlayerSpriteRenderer = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
@@ -47,7 +47,8 @@ public class Player_Movement : MonoBehaviour{
 
 
 
-	void Update() {
+	void Update()
+	{
 		On_PlayerMovement();
 		On_PlayerJump();
 		MirrorAnimationPlayer();
@@ -63,30 +64,34 @@ public class Player_Movement : MonoBehaviour{
 
 	//This function calculate the speed limitation of the player depending of how far he is from the center of Gravity.
 	//This will prevent the player from flying if he goes too fast, too close from the center of gravity 
-	private float CalculateAngularSpeedLimitation(){
+	private float CalculateAngularSpeedLimitation()
+	{
 
-		if(CenterOfGravity != null){
+		if (CenterOfGravity != null)
+		{
 			float speedLimitation;
 			float distance;
 
 			distance = Vector3.Distance(transform.position, CenterOfGravity.transform.position);
-			distance = distance/10;
+			distance = distance / 10;
 
 			speedLimitation = Mathf.Lerp(0.5F, 2F, distance);
-			speedLimitation = speedLimitation/5;
+			speedLimitation = speedLimitation / 5;
 
 			return speedLimitation;
-			
+
 		}
-		else{ return 1; } //If the player don't have gravity center, no speed limitation is set.
+		else { return 1; } //If the player don't have gravity center, no speed limitation is set.
 	}
 
 
-	private void GravityDrag(){
-		if(CenterOfGravity != null){
+	private void GravityDrag()
+	{
+		if (CenterOfGravity != null)
+		{
 			RB2B.AddForce((CenterOfGravity.transform.position - transform.position) * GravityForce);
 			Vector3 dif = CenterOfGravity.transform.position - transform.position;
-			float RotationZ = Mathf.Atan2(dif.y , dif.x) * Mathf.Rad2Deg;
+			float RotationZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
 			transform.rotation = Quaternion.Euler(0.0F, 0.0F, RotationZ + 90);
 		}
 	}
@@ -95,55 +100,66 @@ public class Player_Movement : MonoBehaviour{
 
 
 
-	private void On_PlayerMovement(){
-		if(Input.GetAxis("Horizontal") != 0){
+	private void On_PlayerMovement()
+	{
+		if (Input.GetAxis("Horizontal") != 0)
+		{
 			Vector2 localvelocity;
 			localvelocity = transform.InverseTransformDirection(RB2B.velocity);
-			localvelocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * PlayerSpeed * 100 * CalculateAngularSpeedLimitation();
+			localvelocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * PlayerSpeed * 100* CalculateAngularSpeedLimitation();
 			RB2B.velocity = transform.TransformDirection(localvelocity);
 
-			//anim.SetBool("PlayerMoving", true);
+			anim.SetBool("PlayerMoving", true);
 		}
-		else { //Slow down the player when no pressure on the Horizontal Axis (For more responcive controls).
-			
+		else
+		{ //Slow down the player when no pressure on the Horizontal Axis (For more responcive controls).
+
 			Vector2 localvelocity;
 			localvelocity = transform.InverseTransformDirection(RB2B.velocity);
 			localvelocity.x = localvelocity.x * 0.5F;
 			RB2B.velocity = transform.TransformDirection(localvelocity);
 
-			//anim.SetBool("PlayerMoving", false);
+			anim.SetBool("PlayerMoving", false);
 		}
 	}
 
-	private void On_PlayerJump(){
-		if(Input.GetButtonDown("Jump")){
-			if(JumpCount != 0){
+	private void On_PlayerJump()
+	{
+		if (Input.GetButtonDown("Jump"))
+		{
+			if (JumpCount != 0)
+			{
 				Vector2 localvelocity;
 				localvelocity = transform.InverseTransformDirection(RB2B.velocity);
 				localvelocity.y = 0;
 				RB2B.velocity = transform.TransformDirection(localvelocity);
-				JumpCount --;
-				RB2B.AddRelativeForce(new Vector2(0,1) * JumpSpeed * 10, ForceMode2D.Impulse);
+				JumpCount--;
+				RB2B.AddRelativeForce(new Vector2(0, 1) * JumpSpeed * 10, ForceMode2D.Impulse);
 			}
 		}
 	}
 
 
-	private void CheckIfPlayerGrounded(){
-		
-		if (isGrounded()) {
+	private void CheckIfPlayerGrounded()
+	{
+
+		if (isGrounded())
+		{
 			IsGrounded = true;
 			anim.SetBool("PlayerJumping", false);
 		}
-		else {
+		else
+		{
 			IsGrounded = false;
 			anim.SetBool("PlayerJumping", true);
 		}
 	}
 
 
-	private bool isGrounded(){
-		if(Physics2D.Raycast(transform.position, -transform.up, 1F, GroundedMask, -Mathf.Infinity, Mathf.Infinity)){
+	private bool isGrounded()
+	{
+		if (Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround))
+		{
 			return true;
 		}
 		return false;
@@ -154,26 +170,36 @@ public class Player_Movement : MonoBehaviour{
 	//Below this point, The script is doing normal stuff (like animation)//
 
 
-	private void MirrorAnimationPlayer(){
+	private void MirrorAnimationPlayer()
+	{
 		Vector2 localVelocity = transform.InverseTransformDirection(RB2B.velocity);
 
-		if(localVelocity.x > 0.5F){
-			if(PlayerSpriteRenderer.flipX == true){
-				PlayerSpriteRenderer.flipX = false;
-			}
-		}
-		else if (localVelocity.x < -0.5){
-			if(PlayerSpriteRenderer.flipX == false){
+		if (localVelocity.x > 0.5F)
+		{
+			if (PlayerSpriteRenderer.flipX == false)
+			{
 				PlayerSpriteRenderer.flipX = true;
 			}
 		}
+
+		else if (localVelocity.x < -0.5)
+		{
+			if (PlayerSpriteRenderer.flipX == true)
+			{
+				PlayerSpriteRenderer.flipX = false;
+			}
+		}
+
 	}
-	
 
 
-	private void ResetNumberOfJump(){
-		if(JumpCount < NumberOfJump){
-			if(IsGrounded){
+
+	private void ResetNumberOfJump()
+	{
+		if (JumpCount < NumberOfJump)
+		{
+			if (IsGrounded)
+			{
 				JumpCount = NumberOfJump;
 			}
 		}
