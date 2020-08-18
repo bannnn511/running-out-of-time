@@ -13,7 +13,17 @@ public class Player_Movement : MonoBehaviour
 	public GameObject CenterOfGravity;
 	public float GravityForce;
 
+	// collisionPoint should be the player
+	public Transform collisionPoint;
+
+	// collisionRange is the range where event is triggerd
+	public float collisionRange = 0.5f;
+
+	// layer of which eneny need to check collider
+	public LayerMask enemyLayer;
 	public float PlayerSpeed;
+
+	// MaxSpeed has no use, consider to remove this
 	public float MaxSpeed;
 	public float JumpSpeed;
 
@@ -22,7 +32,7 @@ public class Player_Movement : MonoBehaviour
 	private int JumpCount;
 	private bool IsGrounded;
 	private float distToGround;
-    private Collider2D collider;
+	private Collider2D collider;
 	public LayerMask GroundedMask;
 	public LayerMask whatIsGround;
 	private Rigidbody2D RB2B;
@@ -31,8 +41,6 @@ public class Player_Movement : MonoBehaviour
 	private SpriteRenderer PlayerSpriteRenderer;
 	private Animator anim;
 	private float AngularSpeedLimitation;
-
-
 
 	void Start()
 	{
@@ -46,9 +54,9 @@ public class Player_Movement : MonoBehaviour
 	}
 
 
-
 	void Update()
 	{
+		CheckCollision();
 		On_PlayerMovement();
 		On_PlayerJump();
 		MirrorAnimationPlayer();
@@ -59,8 +67,14 @@ public class Player_Movement : MonoBehaviour
 		Debug.DrawRay(this.transform.position, -transform.up, Color.green);
 	}
 
-
-
+	void CheckCollision()
+	{
+		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(collisionPoint.position, collisionRange, enemyLayer);
+		if (hitEnemies.Length != 0)
+		{
+			Debug.Log("You are death");
+		}
+	}
 
 	//This function calculate the speed limitation of the player depending of how far he is from the center of Gravity.
 	//This will prevent the player from flying if he goes too fast, too close from the center of gravity 
@@ -106,7 +120,7 @@ public class Player_Movement : MonoBehaviour
 		{
 			Vector2 localvelocity;
 			localvelocity = transform.InverseTransformDirection(RB2B.velocity);
-			localvelocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * PlayerSpeed * 100* CalculateAngularSpeedLimitation();
+			localvelocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * PlayerSpeed * 100 * CalculateAngularSpeedLimitation();
 			RB2B.velocity = transform.TransformDirection(localvelocity);
 
 			anim.SetBool("PlayerMoving", true);
