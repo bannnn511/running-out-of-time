@@ -3585,6 +3585,10 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[86].y
       value: -2.9005651
       objectReference: {fileID: 0}
+    - target: {fileID: 8, guid: c61097f7a40496444b8f152671921d51, type: 3}
+      propertyPath: m_Loop
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9, guid: c61097f7a40496444b8f152671921d51, type: 3}
       propertyPath: Width
       value: 218
