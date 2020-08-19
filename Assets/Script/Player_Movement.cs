@@ -13,6 +13,7 @@ public class Player_Movement : MonoBehaviour
 	public GameObject CenterOfGravity;
 	public float GravityForce;
 
+	public GameManage gameManager;
 	// collisionPoint should be the player
 	public Transform collisionPoint;
 
@@ -56,29 +57,29 @@ public class Player_Movement : MonoBehaviour
 
 	void Update()
 	{
-		CheckCollision();
 		On_PlayerMovement();
 		On_PlayerJump();
 		MirrorAnimationPlayer();
 		ResetNumberOfJump();
 		CheckIfPlayerGrounded();
 		GravityDrag();
+		
 
 		Debug.DrawRay(this.transform.position, -transform.up, Color.green);
 	}
-
-	void CheckCollision()
-	{
-		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(collisionPoint.position, collisionRange, enemyLayer);
-		if (hitEnemies.Length != 0)
-		{
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "DeathTrap")
+        {
+			gameManager.EndGame();
 			Debug.Log("You are death");
 		}
-	}
-
-	//This function calculate the speed limitation of the player depending of how far he is from the center of Gravity.
-	//This will prevent the player from flying if he goes too fast, too close from the center of gravity 
-	private float CalculateAngularSpeedLimitation()
+    }
+   
+   
+    //This function calculate the speed limitation of the player depending of how far he is from the center of Gravity.
+    //This will prevent the player from flying if he goes too fast, too close from the center of gravity 
+    private float CalculateAngularSpeedLimitation()
 	{
 
 		if (CenterOfGravity != null)
