@@ -52,6 +52,8 @@ public class Player_Movement : MonoBehaviour
 		collider = GetComponent<Collider2D>();
 		distToGround = collider.bounds.extents.y;
 		JumpCount = NumberOfJump;
+		On_PlayerMovement();
+		On_PlayerJump();
 	}
 
 
@@ -129,10 +131,10 @@ public class Player_Movement : MonoBehaviour
 		else
 		{ //Slow down the player when no pressure on the Horizontal Axis (For more responcive controls).
 
-			Vector2 localvelocity;
+			/*Vector2 localvelocity;
 			localvelocity = transform.InverseTransformDirection(RB2B.velocity);
 			localvelocity.x = localvelocity.x * 0.5F;
-			RB2B.velocity = transform.TransformDirection(localvelocity);
+			RB2B.velocity = transform.TransformDirection(localvelocity);*/
 
 			anim.SetBool("PlayerMoving", false);
 		}
@@ -150,7 +152,12 @@ public class Player_Movement : MonoBehaviour
 				RB2B.velocity = transform.TransformDirection(localvelocity);
 				JumpCount--;
 				RB2B.AddRelativeForce(new Vector2(0, 1) * JumpSpeed * 10, ForceMode2D.Impulse);
+				anim.SetBool("PlayerJumping", true);
 			}
+		}
+        else
+        {
+			anim.SetBool("PlayerJumping", false);
 		}
 	}
 
@@ -161,12 +168,12 @@ public class Player_Movement : MonoBehaviour
 		if (isGrounded())
 		{
 			IsGrounded = true;
-			anim.SetBool("PlayerJumping", false);
+			//anim.SetBool("PlayerJumping", false);
 		}
 		else
 		{
 			IsGrounded = false;
-			anim.SetBool("PlayerJumping", true);
+			//anim.SetBool("PlayerJumping", true);
 		}
 	}
 

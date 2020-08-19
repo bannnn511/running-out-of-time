@@ -7,10 +7,14 @@ public class GameManage : MonoBehaviour
 
     public GameObject player;
     public DeathMenu deathScreen;
+    public GameObject levelWonScreen;
 
     public void FinishLevel()
     {
         Debug.Log("GG!");
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        player.GetComponent<Player_Movement>().enabled = false;
+        levelWonScreen.SetActive(true);
     }
 
     public void EndGame()
@@ -18,6 +22,7 @@ public class GameManage : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
+            player.GetComponent<Player_Movement>().enabled = false;
             Debug.Log("Noob");
             RestartGame();
         }
