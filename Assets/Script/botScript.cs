@@ -112,12 +112,6 @@ public class botScript : MonoBehaviour
       localvelocity = transform.InverseTransformDirection(enemyRigidBody.velocity);
       localvelocity.x = direction * Time.deltaTime * speed * 100 * CalculateAngularSpeedLimitation();
       enemyRigidBody.velocity = transform.TransformDirection(localvelocity);
-      Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(collisionPoint.position, collisionRange, enemyLayer);
-      if (hitEnemies.Length != 0)
-      {
-        Debug.Log("change direction");
-        direction *= -1;
-      }
     }
   }
 
@@ -131,5 +125,15 @@ public class botScript : MonoBehaviour
     {
       moveRight = true;
     }
+  }
+
+  private void OnTriggerEnter2D(Collider2D other)
+  {
+    if (other.gameObject.CompareTag("turn"))
+    {
+      Debug.Log("Turn");
+      direction *= -1;
+    }
+
   }
 }
