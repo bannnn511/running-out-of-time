@@ -108,8 +108,8 @@ public class Player_Movement : MonoBehaviour
 			localvelocity = transform.InverseTransformDirection(RB2B.velocity);
 			localvelocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * PlayerSpeed * 100 * CalculateAngularSpeedLimitation();
 			RB2B.velocity = transform.TransformDirection(localvelocity);
-
-			anim.SetBool("PlayerMoving", true);
+            FindObjectOfType<AudioScript>().PlaySound("PlayerWalking");
+            anim.SetBool("PlayerMoving", true);
 		}
 		else
 		{ //Slow down the player when no pressure on the Horizontal Axis (For more responcive controls).
@@ -135,6 +135,7 @@ public class Player_Movement : MonoBehaviour
 				RB2B.velocity = transform.TransformDirection(localvelocity);
 				JumpCount--;
 				RB2B.AddRelativeForce(new Vector2(0, 1) * JumpSpeed * 10, ForceMode2D.Impulse);
+                FindObjectOfType<AudioScript>().PlaySound("PlayerJump");
 			}
 		}
 	}

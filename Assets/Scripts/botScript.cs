@@ -37,7 +37,8 @@ public class botScript : MonoBehaviour
 		{
 			Debug.Log("aaaaaaaaaaaaa");
 			enemyRigidBody.simulated = true;
-		}
+            FindObjectOfType<AudioScript>().PlaySound("Fly");
+        }
 		else
 		{
 			Debug.Log("bbbbbbbbbbb");
