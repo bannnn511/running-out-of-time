@@ -131,10 +131,10 @@ public class Player_Movement : MonoBehaviour
 		else
 		{ //Slow down the player when no pressure on the Horizontal Axis (For more responcive controls).
 
-			/*Vector2 localvelocity;
+			Vector2 localvelocity;
 			localvelocity = transform.InverseTransformDirection(RB2B.velocity);
 			localvelocity.x = localvelocity.x * 0.5F;
-			RB2B.velocity = transform.TransformDirection(localvelocity);*/
+			RB2B.velocity = transform.TransformDirection(localvelocity);
 
 			anim.SetBool("PlayerMoving", false);
 		}
