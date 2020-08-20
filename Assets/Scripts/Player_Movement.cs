@@ -102,13 +102,17 @@ public class Player_Movement : MonoBehaviour
 
 	private void On_PlayerMovement()
 	{
-		if (Input.GetAxis("Horizontal") != 0)
+        if(Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.LeftArrow) )
+            FindObjectOfType<AudioScript>().PlaySound("PlayerWalking");
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+            FindObjectOfType<AudioScript>().StopSound("PlayerWalking");
+        if (Input.GetAxis("Horizontal") != 0)
 		{
-			Vector2 localvelocity;
+
+            Vector2 localvelocity;
 			localvelocity = transform.InverseTransformDirection(RB2B.velocity);
 			localvelocity.x = Input.GetAxis("Horizontal") * Time.deltaTime * PlayerSpeed * 100 * CalculateAngularSpeedLimitation();
 			RB2B.velocity = transform.TransformDirection(localvelocity);
-            FindObjectOfType<AudioScript>().PlaySound("PlayerWalking");
             anim.SetBool("PlayerMoving", true);
 		}
 		else
@@ -181,7 +185,7 @@ public class Player_Movement : MonoBehaviour
 			{
 				PlayerSpriteRenderer.flipX = true;
 			}
-		}
+        }
 
 		else if (localVelocity.x < -0.5)
 		{
@@ -189,7 +193,7 @@ public class Player_Movement : MonoBehaviour
 			{
 				PlayerSpriteRenderer.flipX = false;
 			}
-		}
+        }
 
 	}
 

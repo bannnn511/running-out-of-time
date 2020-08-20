@@ -19,8 +19,19 @@ public class AudioScript : MonoBehaviour
     // Update is called once per frame
     public void PlaySound(string name)
     {
+      
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (name == "PlayerWalking")
+            s.audioSrc.loop = true;
         s.audioSrc.Play();
         
+    }
+    public void StopSound(string name)
+    {
+
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+      
+        s.audioSrc.Stop();
+
     }
 }
