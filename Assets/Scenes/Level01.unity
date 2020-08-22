@@ -6715,7 +6715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625452074}
   m_LocalRotation: {x: -0, y: -0, z: -0.19851285, w: -0.9800983}
-  m_LocalPosition: {x: -6.7, y: 12.4, z: 50.79844}
+  m_LocalPosition: {x: 2.74, y: 11.36, z: 50.79844}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1877515333}
@@ -17952,7 +17952,7 @@ GameObject:
   - component: {fileID: 1877515333}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: DeathTrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20483,12 +20483,22 @@ PrefabInstance:
     - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.4
+      value: 24.8
       objectReference: {fileID: 0}
     - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 606.9783
+      value: 969.6499
+      objectReference: {fileID: 0}
+    - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1856.3926
       objectReference: {fileID: 0}
     - target: {fileID: 53834941178381090, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
