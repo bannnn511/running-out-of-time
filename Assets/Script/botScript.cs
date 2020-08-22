@@ -65,12 +65,10 @@ public class botScript : MonoBehaviour
       if (aiPath.remainingDistance <= chaseDistance)
       {
         aiPath.canMove = true;
-        // enemyRigidBody.simulated = true;
       }
       else
       {
         aiPath.canMove = false;
-        // enemyRigidBody.simulated = false;
       }
     }
 
