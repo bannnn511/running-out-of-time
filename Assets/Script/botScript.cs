@@ -22,6 +22,7 @@ public class botScript : MonoBehaviour
     enemyRigidBody = GetComponent<Rigidbody2D>();
     spriteRenderer = GetComponent<SpriteRenderer>();
     aiPath = GetComponent<AIPath>();
+
   }
 
   // Update is called once per frame
@@ -50,26 +51,15 @@ public class botScript : MonoBehaviour
     */
   void StartAttack()
   {
-
     if (aiPath != null)
     {
-      if (aiPath.desiredVelocity.x <= 0.01f)
-      {
-        transform.eulerAngles = new Vector3(0, 180, 0);
-      }
-      else
-      {
-        transform.eulerAngles = new Vector3(0, 0, 0);
-      }
-
       if (aiPath.remainingDistance <= chaseDistance)
       {
-        aiPath.canMove = true;
+        enemyRigidBody.simulated = true;
       }
       else
       {
-        aiPath.canMove = false;
-
+        enemyRigidBody.simulated = false;
       }
     }
 
@@ -77,7 +67,6 @@ public class botScript : MonoBehaviour
 
   private float CalculateAngularSpeedLimitation()
   {
-
     if (CenterOfGravity != null)
     {
       float speedLimitation;
@@ -114,7 +103,6 @@ public class botScript : MonoBehaviour
   {
     if (other.gameObject.CompareTag("turn"))
     {
-      Debug.Log("Turn");
       direction *= -1;
     }
 
@@ -140,5 +128,25 @@ public class botScript : MonoBehaviour
       }
     }
 
+    // Flip for ai path
+    if (aiPath != null)
+    {
+
+      if (aiPath.desiredVelocity.x > 0.01f)
+      {
+        if (spriteRenderer.flipX == false)
+        {
+          spriteRenderer.flipX = true;
+        }
+      }
+
+      else if (aiPath.desiredVelocity.x <= 0.01f)
+      {
+        if (spriteRenderer.flipX == true)
+        {
+          spriteRenderer.flipX = false;
+        }
+      }
+    }
   }
 }

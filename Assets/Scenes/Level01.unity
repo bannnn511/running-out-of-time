@@ -6360,6 +6360,7 @@ GameObject:
   - component: {fileID: 625452077}
   - component: {fileID: 625452075}
   - component: {fileID: 625452084}
+  - component: {fileID: 625452085}
   - component: {fileID: 625452076}
   m_Layer: 9
   m_Name: Bot (1)
@@ -6390,7 +6391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625452074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbe45ce486bcb4c45aef27b2148f3943, type: 3}
   m_Name: 
@@ -6570,7 +6571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625452074}
   m_LocalRotation: {x: -0, y: -0, z: -0.19851285, w: -0.9800983}
-  m_LocalPosition: {x: 2.74, y: 11.36, z: 50.79844}
+  m_LocalPosition: {x: 10.88, y: 9.48, z: 50.79844}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1877515333}
@@ -6595,6 +6596,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &625452085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625452074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61959d4beda8742a0a7616c697465777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  speed: 1.5
+  CenterOfGravity: {fileID: 0}
+  GravityForce: 0
+  chaseDistance: 4.5
 --- !u!1 &626348840
 GameObject:
   m_ObjectHideFlags: 0
@@ -10086,14 +10104,7 @@ MonoBehaviour:
   speed: 4
   CenterOfGravity: {fileID: 333907270}
   GravityForce: 1
-  moveRight: 1
   chaseDistance: 4.5
-  repeat: 2
-  collisionPoint: {fileID: 0}
-  collisionRange: 0.5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!50 &1071599828
 Rigidbody2D:
   serializedVersion: 4
@@ -17121,6 +17132,7 @@ GameObject:
   - component: {fileID: 1820218726}
   - component: {fileID: 1820218725}
   - component: {fileID: 1820218732}
+  - component: {fileID: 1820218734}
   - component: {fileID: 1820218733}
   - component: {fileID: 1820218724}
   m_Layer: 9
@@ -17137,7 +17149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820218723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbe45ce486bcb4c45aef27b2148f3943, type: 3}
   m_Name: 
@@ -17330,7 +17342,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820218723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1453113e2c4b0054783b59a22c6082f5, type: 3}
   m_Name: 
@@ -17357,6 +17369,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1820218734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820218723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61959d4beda8742a0a7616c697465777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  speed: 1.5
+  CenterOfGravity: {fileID: 0}
+  GravityForce: 0
+  chaseDistance: 4.5
 --- !u!1001 &1836685421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20430,6 +20459,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1877515333}
     m_Modifications:
+    - target: {fileID: 1728916571679358105, guid: 58e370b8bee593c48ab29e7dc1584cc3,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1728916571679358108, guid: 58e370b8bee593c48ab29e7dc1584cc3,
         type: 3}
       propertyPath: CenterOfGravity
@@ -20439,6 +20473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728916572169842898, guid: 58e370b8bee593c48ab29e7dc1584cc3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1728916572169842909, guid: 58e370b8bee593c48ab29e7dc1584cc3,
         type: 3}
@@ -20518,6 +20557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: DeathTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283273224890418012, guid: 82843c3c540c7a14090d92ee4715d750,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2283273224890418015, guid: 82843c3c540c7a14090d92ee4715d750,
         type: 3}
@@ -20679,15 +20723,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5011263868965085962, guid: 4a920e66f356b634294083a54d4efacf,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5011263868965085963, guid: 4a920e66f356b634294083a54d4efacf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2
+      value: 8.02
       objectReference: {fileID: 0}
     - target: {fileID: 5011263868965085963, guid: 4a920e66f356b634294083a54d4efacf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.88
+      value: -22.99
       objectReference: {fileID: 0}
     - target: {fileID: 5011263868965085963, guid: 4a920e66f356b634294083a54d4efacf,
         type: 3}
@@ -20749,6 +20798,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1746722899}
+    - target: {fileID: 5011263868965085967, guid: 4a920e66f356b634294083a54d4efacf,
+        type: 3}
+      propertyPath: PlayerSpeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a920e66f356b634294083a54d4efacf, type: 3}
 --- !u!1001 &9197285074340014420
