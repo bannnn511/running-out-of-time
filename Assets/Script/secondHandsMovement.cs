@@ -23,4 +23,12 @@ public class secondHandsMovement : MonoBehaviour
         }
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "DeathTrap")
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.collider);
+        }
+    }
 }
