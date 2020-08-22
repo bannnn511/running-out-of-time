@@ -69,6 +69,7 @@ public class botScript : MonoBehaviour
       else
       {
         aiPath.canMove = false;
+
       }
     }
 
