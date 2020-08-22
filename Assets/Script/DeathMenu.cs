@@ -11,6 +11,6 @@ public class DeathMenu : MonoBehaviour
     }
     public void MainMenu()
     {
-        Debug.Log("U pressed main menu button!");
+        SceneManager.LoadScene(0);
     }
 }

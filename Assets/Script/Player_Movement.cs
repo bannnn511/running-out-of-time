@@ -119,6 +119,10 @@ public class Player_Movement : MonoBehaviour
 
 	private void On_PlayerMovement()
 	{
+		if(Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.LeftArrow) )
+            FindObjectOfType<AudioScript>().PlaySound("PlayerWalking");
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+            FindObjectOfType<AudioScript>().StopSound("PlayerWalking");
 		if (Input.GetAxis("Horizontal") != 0)
 		{
 			Vector2 localvelocity;
@@ -153,6 +157,7 @@ public class Player_Movement : MonoBehaviour
 				JumpCount--;
 				RB2B.AddRelativeForce(new Vector2(0, 1) * JumpSpeed * 10, ForceMode2D.Impulse);
 				anim.SetBool("PlayerJumping", true);
+				FindObjectOfType<AudioScript>().PlaySound("PlayerJump");
 			}
 		}
         else
@@ -201,6 +206,7 @@ public class Player_Movement : MonoBehaviour
 			if (PlayerSpriteRenderer.flipX == false)
 			{
 				PlayerSpriteRenderer.flipX = true;
+				FindObjectOfType<AudioScript>().PlaySound("PlayerWalking");
 			}
 		}
 
@@ -209,6 +215,7 @@ public class Player_Movement : MonoBehaviour
 			if (PlayerSpriteRenderer.flipX == true)
 			{
 				PlayerSpriteRenderer.flipX = false;
+				FindObjectOfType<AudioScript>().PlaySound("PlayerWalking");
 			}
 		}
 

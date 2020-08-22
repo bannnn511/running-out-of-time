@@ -15,6 +15,9 @@ public class GameManage : MonoBehaviour
         player.GetComponent<SpriteRenderer>().enabled = false;
         player.GetComponent<Player_Movement>().enabled = false;
         levelWonScreen.SetActive(true);
+        if(SceneManager.GetActiveScene().buildIndex != 3){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void EndGame()
