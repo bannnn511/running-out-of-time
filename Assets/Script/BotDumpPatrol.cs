@@ -33,7 +33,7 @@ public class BotDumpPatrol : MonoBehaviour
   {
     transform.position = Vector2.MoveTowards(transform.position, moveSpots[spotIndex].position, speed * Time.deltaTime);
 
-    if (Vector2.Distance(transform.position, moveSpots[spotIndex].position) < 0.2f)
+    if (Vector2.Distance(transform.position, moveSpots[spotIndex].position) < 0.4f)
     {
       if (waitTime <= 0)
       {
