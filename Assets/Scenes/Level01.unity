@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10749,7 +10749,7 @@ Transform:
   m_GameObject: {fileID: 1071599825}
   m_LocalRotation: {x: 0, y: 0, z: 0.5053562, w: 0.8629108}
   m_LocalPosition: {x: -14.53, y: 3.46, z: 50.79844}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 626348841}
   m_RootOrder: 0
@@ -11764,10 +11764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -14298,7 +14298,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9cf6ed48835a34fecbb96231d75d92c8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -21470,22 +21470,22 @@ PrefabInstance:
     - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 24.8
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 969.6499
+      value: 1156.0837
       objectReference: {fileID: 0}
     - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20
+      value: 5.1
       objectReference: {fileID: 0}
     - target: {fileID: 53834941178381089, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1856.3926
+      value: 1983.1675
       objectReference: {fileID: 0}
     - target: {fileID: 53834941178381090, guid: 802ab95421c92754bb2e9be6cde5dce3,
         type: 3}
@@ -21693,22 +21693,22 @@ PrefabInstance:
     - target: {fileID: 1699536824084631585, guid: 0b6aa9393b7ac56438c1ea1c0913cb37,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.4
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 1699536824084631585, guid: 0b6aa9393b7ac56438c1ea1c0913cb37,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 607.5993
+      value: 1137.0725
       objectReference: {fileID: 0}
     - target: {fileID: 1699536824084631585, guid: 0b6aa9393b7ac56438c1ea1c0913cb37,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.9
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 1699536824084631585, guid: 0b6aa9393b7ac56438c1ea1c0913cb37,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1090.3538
+      value: 2063.5405
       objectReference: {fileID: 0}
     - target: {fileID: 1699536825301476580, guid: 0b6aa9393b7ac56438c1ea1c0913cb37,
         type: 3}

@@ -26,6 +26,7 @@ public class GameManage : MonoBehaviour
         {
             gameHasEnded = true;
             player.GetComponent<Player_Movement>().enabled = false;
+            player.GetComponent<SpriteRenderer>().enabled = false;
             Debug.Log("Noob");
             RestartGame();
         }
