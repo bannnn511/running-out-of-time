@@ -102,10 +102,11 @@ public class botScript : MonoBehaviour
   {
     if (aiPath == null)
     {
-      Vector2 localvelocity;
-      localvelocity = transform.InverseTransformDirection(enemyRigidBody.velocity);
-      localvelocity.x = direction * Time.deltaTime * speed * 100 * CalculateAngularSpeedLimitation();
-      enemyRigidBody.velocity = transform.TransformDirection(localvelocity);
+        Vector2 localvelocity;
+        localvelocity = transform.InverseTransformDirection(enemyRigidBody.velocity);
+        localvelocity.x = direction * Time.deltaTime * speed * 100 * CalculateAngularSpeedLimitation();
+        enemyRigidBody.velocity = transform.TransformDirection(localvelocity);
+     
     }
   }
 

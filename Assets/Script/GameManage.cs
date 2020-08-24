@@ -8,6 +8,7 @@ public class GameManage : MonoBehaviour
     public GameObject player;
     public DeathMenu deathScreen;
     public GameObject levelWonScreen;
+    public GameObject player_corpse;
 
     public void FinishLevel()
     {
@@ -27,6 +28,9 @@ public class GameManage : MonoBehaviour
             gameHasEnded = true;
             player.GetComponent<Player_Movement>().enabled = false;
             player.GetComponent<SpriteRenderer>().enabled = false;
+            //player.GetComponent<CapsuleCollider2D>().enabled = false;
+            //player_corpse.transform.position = new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z);
+            //player_corpse.SetActive(true);
             Debug.Log("Noob");
             RestartGame();
         }
