@@ -9836,6 +9836,7 @@ MonoBehaviour:
   player: {fileID: 1810563047}
   deathScreen: {fileID: 794160291}
   levelWonScreen: {fileID: 1257360602}
+  player_corpse: {fileID: 0}
 --- !u!4 &627203325
 Transform:
   m_ObjectHideFlags: 0
@@ -13098,7 +13099,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9cf6ed48835a34fecbb96231d75d92c8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7116ccd835673c948aa30ef7392b077c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
