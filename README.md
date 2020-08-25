@@ -22,22 +22,18 @@ Basic level for player to get used to the movement of rounded map.
 As deadly as the cold of ice.
 
 <img src="image/6.png" width = "400">
-
 <img src="image/7.png" width = "400">
 
 <img src="image/8.png" width = "400">
-
 <img src="image/9.png" width = "400">
 
 **Level 3: Fog of War**
 You never know what is going to happen..
 
 <img src="image/12.png" width = "400">
-
 <img src="image/13.png" width = "400">
 
 <img src="image/14.png" width = "400">
-
 <img src="image/15.png" width = "400">
 
 <img src="image/16.png" width = "400">
@@ -48,6 +44,7 @@ You never know what is going to happen..
 </a>
 
 **Play on WebGL**: [Running out of time](https://bannnn511.itch.io/running-out-of-time)
+
 **Install on PC (Windows only)**: [Running out of time](http://www.mediafire.com/file/lz660d76kspujr1/file)
 
 **Unity Version**
