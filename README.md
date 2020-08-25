@@ -1,5 +1,6 @@
 **Running out of Time - A project for CS427 Mid-term**
-<img scr="image/1.jpg" width = "400">
+
+<img src="image/1.jpg" width = "400">
 
 
 <a href="https://github.com/bannnn511/furry-meme/graphs/contributors">
