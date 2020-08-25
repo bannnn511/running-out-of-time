@@ -2341,7 +2341,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: https://vod-progressive.akamaized.net/exp=1598334731~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F272%2F18%2F451360080%2F1985318754.mp4~hmac=acecf3f28201aa18327e563021e05e6e1ba9e8690e228222c1b57451f27337b6/vimeo-prod-skyfire-std-us/01/272/18/451360080/1985318754.mp4
+  m_Url: https://www.dl.dropboxusercontent.com/s/m33ftkqprosl8ls/final_5f3b7e0885ac8c0014e54465_618480.mp4?dl=0
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
